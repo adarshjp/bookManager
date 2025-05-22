@@ -1,1 +1,80 @@
-venu/
+### Python ###
+# Virtual Environment
+venv/
+env/
+*.env
+.*-env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+### Django ###
+# SQLite database file (if used for local development)
+db.sqlite3
+db.sqlite3-journal
+
+# Local settings (if you have a local_settings.py not meant for the repo)
+local_settings.py
+*.local.py
+
+# Media files (user-uploaded content, typically not versioned)
+/media/
+
+# Static files collected by collectstatic (if you don't commit them)
+/staticfiles/
+# /static_root/ # Uncomment if you use a different name for STATIC_ROOT
+
+### IDE / Editor ###
+.vscode/
+.idea/
+*.project
+*.pydevproject
+*.sublime-workspace
+*.sublime-project
+
+### OS Generated Files ###
+.DS_Store
+Thumbs.db
+
+### Logs ###
+*.log
+logs/
+
+### Coverage ###
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+
+### Secrets - NEVER COMMIT THESE ###
+# Ensure files containing secrets are listed here, e.g., .env files
+.env
+secrets.json
+credentials.ini
