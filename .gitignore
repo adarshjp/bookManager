@@ -78,6 +78,5 @@ coverage.xml
 .env
 secrets.json
 credentials.ini
-migrations/
 .gitignore
 .dockerignore

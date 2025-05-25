@@ -11,7 +11,7 @@ pipeline {
     environment {
         // Replace 'your-dockerhub-username' with your actual Docker Hub username
         // Replace 'your-repo-name' with the name you want for your Docker image repository
-        DOCKER_IMAGE_NAME = "your-dockerhub-username/django-book-manager"
+        DOCKER_IMAGE_NAME = "adarshp24/django-book-manager:latest"
         // Get the Git commit SHA for tagging the Docker image
         IMAGE_TAG = "${env.GIT_COMMIT_SHORT ?: 'latest'}"
         // Credentials ID for Docker Hub (configured in Jenkins, e.g., 'dockerhub-credentials')
