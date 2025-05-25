@@ -1,0 +1,30 @@
+{% extends 'books/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}My Book Collection{% endblock %}
+
+{% block content %}
+    <h1>My Book Collection</h1>
+    <p>
+        <a href="{% url 'book_new' %}" class="btn btn-primary mb-3">Add New Book</a>
+    </p>
+    {% if books %}
+        <ul class="list-group">
+            {% for book in books %}
+                <li class="list-group-item">
+                    <div>
+                        <a href="{% url 'book_detail' book.pk %}"><strong>{{ book.title }}</strong></a> by {{ book.author }}
+                        {% if book.publication_year %} ({{ book.publication_year }}) {% endif %}
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'book_edit' book.pk %}" class="btn btn-sm btn-info">Edit</a>
+                        <a href="{% url 'book_delete' book.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            No books in your collection yet. Add one to get started!
+        </div>
+    {% endif %}
+{% endblock %}

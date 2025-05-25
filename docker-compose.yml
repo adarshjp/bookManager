@@ -1,0 +1,13 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  web:
+    build: .  # Build the image from the Dockerfile in the current directory
+    command: sh -c "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app  # Mount the current host directory into the container for live code changes
+    ports:
+      - "8000:8000"  # Map host port 8000 to container port 8000
+    environment:
+      DJANGO_SETTINGS_MODULE: book_manager_project.settings
