@@ -21,15 +21,7 @@ pipeline {
 
     // Define the stages of your pipeline
     stages {
-        stage('Checkout Code') {
-            steps {
-                // Checkout the SCM (Source Code Management) - Jenkins will automatically pull your Git repo
-                // Ensure your Jenkins job is configured to poll your Git repository or use webhooks.
-                script {
-                    checkout scm
-                }
-            }
-        }
+        
 
         stage('Build Docker Image') {
             steps {
