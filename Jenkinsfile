@@ -43,7 +43,7 @@ pipeline {
                     // Run tests using the built Docker image
                     // -it for interactive and pseudo-TTY, --rm to remove container after exit
                     // We temporarily mount the current directory to capture test results or for debugging
-                    sh "docker run --rm -v \$(pwd):/app ${DOCKER_IMAGE_NAME}:${IMAGE_TAG} /bin/sh -c 'python manage.py test'"
+                    sh "docker run --rm ${DOCKER_IMAGE_NAME}:${IMAGE_TAG} /bin/sh -c 'python manage.py test'"
                     echo "Tests completed."
                 }
             }
